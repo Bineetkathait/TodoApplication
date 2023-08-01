@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+</head>
+<body>
+<%- include("partials/header.ejs") %>
+        <h1 class="heading"><%= day %></h1>
+        <div class="container">
+            <div class="items">  
+                <% for( let index = 0; index < work.length  ; index++ ) { %>
+                <div class="itemsName">
+                    <ul class="centre">
+                        <input type="checkbox" class="inpt">
+                        <li class="listName "><%= work[index]%></li>    
+                    </ul>
+                </div>
+            <% } %>
+        </div>
+        <form action="/submit" method="POST" class="ff">
+            <input type="text" name="list" id="newItems" placeholder="Make todo list" autocomplete="off">
+            <button class="btn">+</button>
+        </form>
+        </div>
+
+    </div>
+</body>
+</html>
